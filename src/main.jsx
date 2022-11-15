@@ -7,7 +7,7 @@ import "./index.css";
 import Layout from "./layout/Layout";
 
 //import pages
-import Index from "./pages/Index";
+import Index, {loader as ClientesLoader} from "./pages/Index";
 import NewClient from "./pages/NewClient";
 
 const router = createBrowserRouter([
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Index />,
+        loader: ClientesLoader
       },
       {
         path: "/clients/new-client",
