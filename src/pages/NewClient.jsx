@@ -1,12 +1,40 @@
-import { useNavigate, Form } from 'react-router-dom';
+import { useNavigate, Form, useActionData } from 'react-router-dom';
 
-export function action({ request }) {
-  console.log(request);
+import Error from '../components/Error';
+
+export async function action({ request }) {
+  const formData = await  request.formData();
+
+  const datos = Object.fromEntries(formData)
+  
+  //Validacion
+  const errores = []
+  if(Object.values(datos).includes('')){
+    console.log(datos.email)
+    if (datos.nombre.includes('')){
+      errores.push('El campo nombre es requerido')
+    }else if(datos.empresa === ''){
+      errores.push('El campo empresa es requerido')
+    }else if (datos.email === ''){
+      errores.push('El campo email es requerido')
+    } else if (datos.telefono) {
+      errores.push('El campo telefono es requerido')
+    }
+  }
+
+  //Retornar datos
+  if (Object.keys(errores)){
+    return errores
+  }
+
 }
 
 import ClientForm from '../components/ClientForm';
 const NewClient = () => {
   const navigate = useNavigate();
+
+  const errores = useActionData();
+  console.log(errores);
 
   return (
     <>
@@ -22,7 +50,8 @@ const NewClient = () => {
       </div>
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-10">
-        <p className="align-center">Formulario</p>
+        <p className="text-center">Formulario</p>
+        {errores?ClientForm.length && errores.map((error, index) => <Error key={index}>{error}</Error> ) : null}
         <Form method="post">
           <ClientForm />
 
