@@ -9,6 +9,7 @@ import Layout from './layout/Layout';
 //import pages
 import Index, { loader as ClientesLoader } from './pages/Index';
 import NewClient, { action as newClientAction } from './pages/NewClient';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Index />,
         loader: ClientesLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: '/clients/new-client',
@@ -32,5 +34,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

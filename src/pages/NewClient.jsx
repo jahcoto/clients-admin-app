@@ -1,6 +1,7 @@
 import { useNavigate, Form, useActionData } from 'react-router-dom';
-
+import ClientForm from '../components/ClientForm';
 import Error from '../components/Error';
+import { addClient } from '../data/Clients.js';
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -23,12 +24,15 @@ export async function action({ request }) {
   }
 
   let regex = new RegExp(
-    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])",
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
   );
   const email = formData.get('email');
   if (!regex.test(email)) {
     errores.push('El email no es valido!!!');
   }
+
+  console.log(datos);
+  addClient(datos);
 
   //Retornar datos
   if (Object.keys(errores)) {
@@ -36,7 +40,6 @@ export async function action({ request }) {
   }
 }
 
-import ClientForm from '../components/ClientForm';
 const NewClient = () => {
   const navigate = useNavigate();
 

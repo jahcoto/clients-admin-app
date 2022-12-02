@@ -1,12 +1,11 @@
-import { useLoaderData } from "react-router-dom";
-import Client from "../components/client";
+import { useLoaderData } from 'react-router-dom';
+import Client from '../components/client';
 
-import { getClients } from '../data/Clients'
+import { getClients } from '../data/Clients';
 
 export function loader() {
-  const clientes = getClients()
-  console.log(clientes)
-  return {}
+  const clientes = getClients();
+  return clientes;
 }
 
 const Index = () => {
