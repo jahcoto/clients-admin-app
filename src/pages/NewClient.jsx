@@ -1,4 +1,4 @@
-import { useNavigate, Form, useActionData } from 'react-router-dom';
+import { useNavigate, Form, useActionData, redirect } from 'react-router-dom';
 import ClientForm from '../components/ClientForm';
 import Error from '../components/Error';
 import { addClient } from '../data/Clients.js';
@@ -31,8 +31,9 @@ export async function action({ request }) {
     errores.push('El email no es valido!!!');
   }
 
-  console.log(datos);
-  addClient(datos);
+  await addClient(datos);
+
+  return redirect('/');
 
   //Retornar datos
   if (Object.keys(errores)) {

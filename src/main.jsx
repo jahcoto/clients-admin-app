@@ -5,11 +5,14 @@ import './index.css';
 
 //Import components
 import Layout from './layout/Layout';
+import ErrorPage from './components/ErrorPage';
 
 //import pages
 import Index, { loader as ClientesLoader } from './pages/Index';
 import NewClient, { action as newClientAction } from './pages/NewClient';
-import ErrorPage from './components/ErrorPage';
+import UpdateClient, {
+  loader as updateClientLoader,
+} from './pages/UpdateClient';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,12 @@ const router = createBrowserRouter([
         path: '/clients/new-client',
         element: <NewClient />,
         action: newClientAction,
+      },
+      {
+        path: '/clients/:clientId/edit',
+        element: <UpdateClient />,
+        loader: updateClientLoader,
+        errorElement: <ErrorPage />,
       },
     ],
   },
