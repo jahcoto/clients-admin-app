@@ -8,7 +8,7 @@ import Layout from './components/Layout';
 
 //Pages
 import NewClient from './pages/NewClient';
-import Clients from './pages/Clients';
+import Clients, { loader as clientsLoader } from './pages/Clients';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Clients />,
+        loader: clientsLoader,
       },
       {
         path: '/clients/new-client',

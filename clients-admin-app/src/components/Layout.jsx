@@ -5,11 +5,13 @@ import Sidebar from './Sidebar';
 
 const Layout = () => {
   return (
-    <div className="flex flex-col">
+    <div className="md:flex md:flex-col md:min-h-screen">
       <Header />
-      <div className="flex flex-row w-full">
+      <div className="md:flex md:flex-row md:min-h-screen">
         <Sidebar />
-        <Outlet />
+        <main className="md:w-10/12 px-10  overflow-scroll">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
