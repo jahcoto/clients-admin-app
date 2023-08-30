@@ -1,5 +1,5 @@
 const Client = ({ client }) => {
-  const { nombre, apellidos, empresa, email, telefono, id } = client;
+  const { nombre, apellidos, empresa, medio, telefono, id } = client;
   return (
     <tr className="border-b" key={id}>
       <td className="p-3 space-x-2">
@@ -13,8 +13,8 @@ const Client = ({ client }) => {
           <span className="text-gray-800 uppercase font-bold">{empresa}</span>
         </p>
         <p className="text-xl text-gray-600">
-          Email:{' '}
-          <span className="text-gray-800 uppercase font-bold">{email}</span>
+          Medio Contacto:{' '}
+          <span className="text-gray-800 uppercase font-bold">{medio}</span>
         </p>
         <p className="text-xl text-gray-600">
           Teléfono:{' '}

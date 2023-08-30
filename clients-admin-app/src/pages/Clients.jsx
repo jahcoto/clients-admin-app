@@ -8,7 +8,7 @@ export function loader() {
       nombre: 'Juan',
       apellidos: 'De la Torre',
       telefono: 102013313,
-      email: 'juan@juan.com',
+      medio: 'whatsapp',
       empresa: 'Codigo Con Juan',
     },
     {
@@ -16,7 +16,7 @@ export function loader() {
       nombre: 'Karen',
       apellidos: 'Gomez Bolaños',
       telefono: 138198313,
-      email: 'karen@juan.com',
+      medio: 'whatsapp',
       empresa: 'Codigo Con Juan',
     },
     {
@@ -24,7 +24,7 @@ export function loader() {
       nombre: 'Josue',
       apellidos: 'Quiros',
       telefono: 31983913,
-      email: 'josue@juan.com',
+      medio: 'whatsapp',
       empresa: 'Codigo Con Juan',
     },
     {
@@ -32,7 +32,7 @@ export function loader() {
       nombre: 'Miguel',
       apellidos: 'Mendez Contreras',
       telefono: 319381983,
-      email: 'miguel@juan.com',
+      medio: 'whatsapp',
       empresa: 'Codigo Con Juan',
     },
     {
@@ -40,7 +40,7 @@ export function loader() {
       nombre: 'Pedro',
       apellidos: 'Salas Fonseca',
       telefono: 1398198938,
-      email: 'pedro@juan.com',
+      medio: 'whatsapp',
       empresa: 'Codigo Con Juan',
     },
   ];
