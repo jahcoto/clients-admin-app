@@ -1,17 +1,30 @@
-import { useNavigate, Form } from 'react-router-dom';
+import { useNavigate, Form, useActionData } from 'react-router-dom';
 
 import ClientForm from '../components/ClientForm';
+import Error from '../components/Error';
 
 export async function action({ request }) {
   const formData = await request.formData();
 
   const datos = Object.fromEntries(formData);
-  console.log(datos);
+
+  const errors = [];
+  if (Object.values(datos).includes('')) {
+    errors.push('Todos los campos son obligatorios!!!');
+  }
+
+  //Return errors
+  if (Object.keys(errors).length) {
+    return errors;
+  }
   return '';
 }
 
 const NewClient = () => {
   const navigate = useNavigate();
+  const errors = useActionData();
+
+  console.log(errors);
   return (
     <div className="bg-gray-100 h-screen">
       <h1 className="font-bold text-2xl text-blue-400">Nuevo Cliente</h1>
@@ -28,7 +41,11 @@ const NewClient = () => {
         <p className="text-base font-black text-blue-300">
           Formulario Nuevo Cliente
         </p>
-        <Form method="POST">
+
+        {errors?.length &&
+          errors.map((error, i) => <Error key={i}>{error}</Error>)}
+
+        <Form method="POST" noValidate>
           <ClientForm />
           <input
             type="submit"
