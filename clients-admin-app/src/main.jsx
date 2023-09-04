@@ -9,6 +9,7 @@ import Layout from './components/Layout';
 //Pages
 import NewClient, { action as NewClientAction } from './pages/NewClient';
 import Clients, { loader as clientsLoader } from './pages/Clients';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Clients />,
         loader: clientsLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: '/clients/new-client',

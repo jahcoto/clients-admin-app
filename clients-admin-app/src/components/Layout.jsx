@@ -9,7 +9,7 @@ const Layout = () => {
       <Header />
       <div className="md:flex md:flex-row md:min-h-screen">
         <Sidebar />
-        <main className="md:w-10/12 px-10">
+        <main className="md:w-10/12 px-10 md:min-h-screen overflow-scroll">
           <Outlet />
         </main>
       </div>

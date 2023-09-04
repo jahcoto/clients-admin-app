@@ -1,49 +1,9 @@
 import { useLoaderData } from 'react-router-dom';
+import { getClients } from '../api/clients';
 import Client from '../components/Client';
 
 export function loader() {
-  const clients = [
-    {
-      id: 1,
-      nombre: 'Juan',
-      apellidos: 'De la Torre',
-      telefono: 102013313,
-      medio: 'whatsapp',
-      empresa: 'Codigo Con Juan',
-    },
-    {
-      id: 2,
-      nombre: 'Karen',
-      apellidos: 'Gomez Bolaños',
-      telefono: 138198313,
-      medio: 'whatsapp',
-      empresa: 'Codigo Con Juan',
-    },
-    {
-      id: 3,
-      nombre: 'Josue',
-      apellidos: 'Quiros',
-      telefono: 31983913,
-      medio: 'whatsapp',
-      empresa: 'Codigo Con Juan',
-    },
-    {
-      id: 4,
-      nombre: 'Miguel',
-      apellidos: 'Mendez Contreras',
-      telefono: 319381983,
-      medio: 'whatsapp',
-      empresa: 'Codigo Con Juan',
-    },
-    {
-      id: 5,
-      nombre: 'Pedro',
-      apellidos: 'Salas Fonseca',
-      telefono: 1398198938,
-      medio: 'whatsapp',
-      empresa: 'Codigo Con Juan',
-    },
-  ];
+  const clients = getClients();
 
   return clients;
 }

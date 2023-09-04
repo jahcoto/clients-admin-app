@@ -1,0 +1,54 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "apellidos": "De la Torre",
+      "usuario": "juan01",
+      "password": "123456",
+      "telefono": 102013313,
+      "medio": "whatsapp",
+      "empresa": "Codigo Con Juan"
+    },
+    {
+      "id": 2,
+      "nombre": "Alfonso",
+      "apellidos": "Solano",
+      "usuario": "AlfonsoSolano01",
+      "password": "123456",
+      "telefono": 102013313,
+      "medio": "whatsapp",
+      "empresa": "Codigo Con Juan"
+    },
+    {
+      "id": 3,
+      "nombre": "Mario",
+      "apellidos": "Araya",
+      "usuario": "MarioAraya01",
+      "password": "123456",
+      "telefono": 102013313,
+      "medio": "whatsapp",
+      "empresa": "Codigo Con Juan"
+    },
+    {
+      "id": 4,
+      "nombre": "Catalina",
+      "apellidos": "Perez",
+      "usuario": "Catalina01",
+      "password": "123456",
+      "telefono": 102013313,
+      "medio": "whatsapp",
+      "empresa": "Codigo Con Juan"
+    },
+    {
+      "id": 5,
+      "nombre": "Randal",
+      "apellidos": "Chacon",
+      "usuario": "Randal01",
+      "password": "123456",
+      "telefono": 102013313,
+      "medio": "whatsapp",
+      "empresa": "Codigo Con Juan"
+    }
+  ]
+}

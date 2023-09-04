@@ -1,10 +1,14 @@
 const Client = ({ client }) => {
-  const { nombre, apellidos, empresa, medio, telefono, id } = client;
+  const { nombre, apellidos, usuario, password, empresa, medio, telefono, id } =
+    client;
   return (
     <tr className="border-b" key={id}>
       <td className="p-3 space-x-2">
         <p className="text-xl text-gray-800">
           {nombre} {apellidos}
+        </p>
+        <p className="text-xl text-gray-800">
+          {usuario}: {password}
         </p>
       </td>
       <td className="p-3 space-y-2">
